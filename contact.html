@@ -233,9 +233,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             form.reset();
-            showStatus('Mesazhi u dërgua. Do të shfaqet në Netlify → Forms, dhe mund të marrësh njoftime me email nga konfigurimi i projektit.', true);
+            showStatus('Mesazhi u dërgua me sukses.', true);
         } catch (err) {
-            showStatus('Nuk u dërgua ende. Kontrollo që forma është në deploy-in e Netlify dhe provo përsëri.', false);
+            showStatus('Mesazhi nuk u dërgua ende. Provo përsëri.', false);
         } finally {
             button.disabled = false;
             button.textContent = 'Dërgo Mesazhin →';
