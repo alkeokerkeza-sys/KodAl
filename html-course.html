@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursi i HTML – KodAl</title>
+    <link rel="stylesheet" href="stylee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header><nav class="toolbar">
+    <div class="logo-container"><img src="media/zril.png" alt="Logo"></div>
+    <div class="leftnav">
+        <a href="index.html">Kryefaqja</a>
+        <a href="contact.html">Kontaktet</a>
+        <div class="dropdown-wrapper">
+            <button class="dropdown-trigger">Kurset <span class="arrow">&#9660;</span></button>
+            <div class="dropdown-menu">
+                <a href="html-course.html"><i class="fa-brands fa-html5" style="color:#e34c26;"></i> HTML</a>
+                <a href="css-course.html"><i class="fa-brands fa-css3-alt" style="color:#264de4;"></i> CSS</a>
+                <a href="python-course.html"><i class="fa-brands fa-python" style="color:#ffd43b;"></i> Python</a>
+                <a href="javascript-course.html"><i class="fa-brands fa-js" style="color:#f7df1e;"></i> JavaScript</a>
+                <a href="cpp-course.html"><i class="fa-solid fa-microchip" style="color:#00bfff;"></i> C++</a>
+            </div>
+        </div>
+    </div>
+        <div class="rightnav">
+            <a href="login.html" class="login-btn">
+                <span class="login-btn-text">Hyr</span>
+                <i class="fa-solid fa-arrow-right-to-bracket login-icon"></i>
+            </a>
+        </div></header>
+
+<section class="course-hero">
+    <div class="course-hero-bg"><img src="media/pexels-peaky-31177054.jpg" alt="HTML"></div>
+    <div class="course-hero-overlay"></div>
+    <div class="course-hero-content">
+        <i class="fa-brands fa-html5 course-hero-icon" style="color:#e34c26;"></i>
+        <h1>Kursi i HTML</h1>
+        <p>Mëso bazën e çdo faqeje interneti. HTML është hapi i parë — dhe e mësojmë shumë mirë.</p>
+    </div>
+</section>
+
+<div class="course-body">
+    <div class="course-meta">
+        <div class="course-meta-item"><i class="fa-regular fa-clock"></i><div><strong>12 Orë</strong><span>Kohëzgjatja</span></div></div>
+        <div class="course-meta-item"><i class="fa-solid fa-layer-group"></i><div><strong>Fillestar</strong><span>Niveli</span></div></div>
+        <div class="course-meta-item"><i class="fa-solid fa-certificate"></i><div><strong>Certifikatë</strong><span>Pas Përfundimit</span></div></div>
+        <div class="course-meta-item"><i class="fa-solid fa-infinity"></i><div><strong>Qasje e Përjetshme</strong><span>Mëso Kur Të Duash</span></div></div>
+    </div>
+
+    <h2 class="course-section-title">📚 Plani Mësimor — kliko çdo temë!</h2>
+    <div class="course-modules">
+
+        <div class="module-item">
+            <div class="module-header" onclick="toggleModule(this)">
+                <div class="module-num">1</div>
+                <div class="module-header-text"><h4>Hyrje në HTML</h4><p>Çfarë është HTML dhe si funksionon browseri</p></div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 1.5 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>HTML (HyperText Markup Language) është gjuha me të cilën ndërtojmë strukturën e çdo faqeje interneti. Nuk është gjuhë programimi — është gjuhë <strong>shënjimi</strong>. Çdo gjë që shikon në internet ekziston sepse dikush ka shkruar HTML.</p>
+                <p>Browseri (Chrome, Firefox etj.) lexon kodin HTML dhe e kthen atë në faqe vizuale. Mendoje si "përkthyes" — merr kodin tënd, tregon rezultatin.</p>
+                <div class="code-block"><span class="c">&lt;!-- Çdo faqe HTML fillon me këtë --&gt;</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Titulli i Faqes<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Pershendetje Bote!<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Paragrafi im i pare.<span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></div>
+                <div class="tip"><strong>💡 Këshillë:</strong> Çdo tag hapës &lt;p&gt; duhet tagë mbyllëse &lt;/p&gt;. Ky është gabimi #1 i fillestarëve!</div>
+                <p><strong>Ushtrimi:</strong> Hap Notepad, shkruaj strukturën e mësipërme, ruaje si <code>faqja.html</code> dhe hape me Chrome. Ke bërë faqen tënde të parë!</p>
+            </div></div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header" onclick="toggleModule(this)">
+                <div class="module-num">2</div>
+                <div class="module-header-text"><h4>Teksti, Titujt dhe Listat</h4><p>Si organizojmë dhe formatojmë tekstin</p></div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 1.5 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>HTML ka 6 nivele titulli — nga &lt;h1&gt; (më i madhi) deri te &lt;h6&gt;. Rregull i rëndësishëm: &lt;h1&gt; përdoret vetëm NJË herë në faqe — është si titulli i librit.</p>
+                <div class="code-block"><span class="tag">&lt;h1&gt;</span>Titulli Kryesor (vetem nje here!)<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;h2&gt;</span>Seksioni i Pare<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;h3&gt;</span>Nenseksion<span class="tag">&lt;/h3&gt;</span>
+<span class="tag">&lt;p&gt;</span>Paragraf normal. Mund te kete <span class="tag">&lt;strong&gt;</span>bold<span class="tag">&lt;/strong&gt;</span> ose <span class="tag">&lt;em&gt;</span>italic<span class="tag">&lt;/em&gt;</span>.<span class="tag">&lt;/p&gt;</span>
+
+<span class="c">&lt;!-- Lista me pika --&gt;</span>
+<span class="tag">&lt;ul&gt;</span>
+  <span class="tag">&lt;li&gt;</span>HTML<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>CSS<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span>
+
+<span class="c">&lt;!-- Lista me numra --&gt;</span>
+<span class="tag">&lt;ol&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Hapi i pare<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Hapi i dyte<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ol&gt;</span></div>
+                <div class="tip"><strong>💡 SEO Tip:</strong> Google lexon titujt e tu! H1 tregon temën kryesore, H2 nëntema. Mos i vendos titujt vetëm për t'i bërë tekstin të madh — ka kuptim semantik.</div>
+            </div></div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header" onclick="toggleModule(this)">
+                <div class="module-num">3</div>
+                <div class="module-header-text"><h4>Lidhjet dhe Imazhet</h4><p>Si lidhim faqe dhe vendosim media</p></div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>Lidhjet janë shpirti i internetit. Vendosim lidhje me tagun <strong>&lt;a&gt;</strong> dhe atributin <strong>href</strong> (hypertext reference):</p>
+                <div class="code-block"><span class="c">&lt;!-- Lidhje te faqe tjeter --&gt;</span>
+<span class="tag">&lt;a</span> <span class="at">href</span>=<span class="val">"https://google.com"</span><span class="tag">&gt;</span>Shko te Google<span class="tag">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- Hap ne tab te re --&gt;</span>
+<span class="tag">&lt;a</span> <span class="at">href</span>=<span class="val">"https://google.com"</span> <span class="at">target</span>=<span class="val">"_blank"</span><span class="tag">&gt;</span>Google (tab e re)<span class="tag">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- Lidhje ne faqen tuaj --&gt;</span>
+<span class="tag">&lt;a</span> <span class="at">href</span>=<span class="val">"about.html"</span><span class="tag">&gt;</span>Rreth Nesh<span class="tag">&lt;/a&gt;</span>
+
+<span class="c">&lt;!-- Imazh --&gt;</span>
+<span class="tag">&lt;img</span> <span class="at">src</span>=<span class="val">"foto.jpg"</span> <span class="at">alt</span>=<span class="val">"Pershkrimi i fotos"</span> <span class="at">width</span>=<span class="val">"400"</span><span class="tag">&gt;</span></div>
+                <div class="tip"><strong>💡 Gjithmonë vendos alt=""!</strong> Atributi alt ndihmon njerëzit me probleme shikimi dhe Google-in të kuptojë çfarë tregon imazhi — është shumë i rëndësishëm!</div>
+            </div></div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header" onclick="toggleModule(this)">
+                <div class="module-num">4</div>
+                <div class="module-header-text"><h4>Formularët dhe Inputet</h4><p>Si ndërtojmë forma për të marrë të dhëna</p></div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>Format janë mënyra kryesore si njerëzit komunikojnë me faqet web. Çdo formular nis me tagun &lt;form&gt; dhe brenda vendosim inpute të ndryshme:</p>
+                <div class="code-block"><span class="tag">&lt;form&gt;</span>
+  <span class="tag">&lt;label</span> <span class="at">for</span>=<span class="val">"emri"</span><span class="tag">&gt;</span>Emri:<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input</span> <span class="at">type</span>=<span class="val">"text"</span> <span class="at">id</span>=<span class="val">"emri"</span> <span class="at">placeholder</span>=<span class="val">"Emri yt..."</span><span class="tag">&gt;</span>
+
+  <span class="tag">&lt;label</span> <span class="at">for</span>=<span class="val">"email"</span><span class="tag">&gt;</span>Email:<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input</span> <span class="at">type</span>=<span class="val">"email"</span> <span class="at">id</span>=<span class="val">"email"</span><span class="tag">&gt;</span>
+
+  <span class="tag">&lt;input</span> <span class="at">type</span>=<span class="val">"password"</span> <span class="at">placeholder</span>=<span class="val">"Fjalekalimi..."</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;input</span> <span class="at">type</span>=<span class="val">"checkbox"</span><span class="tag">&gt;</span> Pranoi kushtet
+  
+  <span class="tag">&lt;button</span> <span class="at">type</span>=<span class="val">"submit"</span><span class="tag">&gt;</span>Dergo<span class="tag">&lt;/button&gt;</span>
+<span class="tag">&lt;/form&gt;</span></div>
+                <div class="tip"><strong>💡 label + for + id:</strong> Gjithmonë lidh labelën me inputin. Kur klikohet labela, input-i aktivizohet — kjo është aksesueshmëri bazë!</div>
+            </div></div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header" onclick="toggleModule(this)">
+                <div class="module-num">5</div>
+                <div class="module-header-text"><h4>HTML5 Semantik</h4><p>Tags të inteligjente me kuptim real</p></div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>Para HTML5, çdo gjë vendosej brenda &lt;div&gt;. HTML5 solli tags me kuptim real — browseri dhe Google e dinë çfarë është çfarë:</p>
+                <div class="code-block"><span class="tag">&lt;header&gt;</span>  <span class="c">&lt;!-- lart: logo, nav --&gt;</span>
+  <span class="tag">&lt;nav&gt;</span>
+    <span class="tag">&lt;a</span> <span class="at">href</span>=<span class="val">"/"</span><span class="tag">&gt;</span>Kryefaqja<span class="tag">&lt;/a&gt;</span>
+  <span class="tag">&lt;/nav&gt;</span>
+<span class="tag">&lt;/header&gt;</span>
+
+<span class="tag">&lt;main&gt;</span>  <span class="c">&lt;!-- permbajtja kryesore --&gt;</span>
+  <span class="tag">&lt;section&gt;</span>
+    <span class="tag">&lt;article&gt;</span>
+      <span class="tag">&lt;h2&gt;</span>Artikulli im<span class="tag">&lt;/h2&gt;</span>
+    <span class="tag">&lt;/article&gt;</span>
+  <span class="tag">&lt;/section&gt;</span>
+<span class="tag">&lt;/main&gt;</span>
+
+<span class="tag">&lt;footer&gt;</span>  <span class="c">&lt;!-- poshte: copyright, kontakt --&gt;</span>
+  <span class="tag">&lt;p&gt;</span>Copyright 2025<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;/footer&gt;</span></div>
+                <div class="tip"><strong>💡 Pse ka rëndësi?</strong> Google lexon &lt;header&gt;, &lt;main&gt;, &lt;footer&gt; dhe e kupton strukturën e faqes. Kjo ndikon drejtpërdrejt në pozicionin tënd në rezultate kërkimi!</div>
+            </div></div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header" onclick="toggleModule(this)">
+                <div class="module-num">6</div>
+                <div class="module-header-text"><h4>🎯 Projekti Final</h4><p>Ndërto faqen tënde personale nga zero</p></div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 3 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>Tani ndërtojmë gjithçka bashkë! Projekti: <strong>faqja jote personale</strong> me 3 faqe të lidhura.</p>
+                <div class="code-block">projekt-im/
+├── index.html      <span class="c"># "Mirë se vini" + prezantim</span>
+├── about.html      <span class="c"># kush je ti</span>
+├── contact.html    <span class="c"># formular kontakti</span>
+└── images/
+    └── foto-ime.jpg</div>
+                <p><strong>Çdo faqe duhet të ketë:</strong> navigim me lidhje te të gjitha faqet, tituj të organizuar (h1→h2→h3), të paktën një imazh, dhe footer me emrin tënd.</p>
+                <div class="tip"><strong>🎉 Bravo!</strong> Pasi ta mbarosh — ke bazat e HTML! Hapi tjetër është CSS, ku faqja fillon të duket BUKUR. Na dërgo projektin tënd!</div>
+            </div></div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h3>KODAL</h3>
+            <p>Platformë mësimi programimi e bërë për studentë shqiptarë.</p>
+            <div class="footer-social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <h4>Kurset</h4>
+            <ul>
+                <li><a href="html-course.html">HTML</a></li>
+                <li><a href="css-course.html">CSS</a></li>
+                <li><a href="python-course.html">Python</a></li>
+                <li><a href="javascript-course.html">JavaScript</a></li>
+                <li><a href="cpp-course.html">C++</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Kompania</h4>
+            <ul>
+                <li><a href="index.html">Kryefaqja</a></li>
+                <li><a href="contact.html">Rreth Nesh</a></li>
+                <li><a href="contact.html">Kontaktet</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact-block">
+            <h4>Na Kontakto</h4>
+            <p><i class="fa-solid fa-envelope"></i> info@kod.al</p>
+            <p><i class="fa-solid fa-phone"></i> +355 6x xx xx xxx</p>
+            <p><i class="fa-solid fa-location-dot"></i> Tiranë, Shqipëri</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 KodAl. Të gjitha të drejtat e rezervuara.</p>
+        <div class="footer-bottom-links">
+            <a href="#">Privatësia</a>
+            <a href="#">Kushtet</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+function toggleModule(header) {
+    const item = header.parentElement;
+    item.classList.toggle('open');
+}
+</script>
+
+    <script src="auth.js"></script>
+    <script src="course.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursi JavaScript – KodAl</title>
+    <link rel="stylesheet" href="stylee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <nav class="toolbar">
+        <div class="logo-container">
+        <img src="media/zril.png" alt="Site Logo">
+        </div>
+        <div class="leftnav">
+            <a href="index.html">Kryefaqja</a>
+            <a href="contact.html">Kontaktet</a>
+            <div class="dropdown-wrapper">
+                <button class="dropdown-trigger">
+                    Kurset <span class="arrow">&#9660;</span>
+                </button>
+                <div class="dropdown-menu">
+                    <a href="html-course.html"><i class="fa-brands fa-html5" style="color:#e34c26;"></i> HTML</a>
+                    <a href="css-course.html"><i class="fa-brands fa-css3-alt" style="color:#264de4;"></i> CSS</a>
+                    <a href="python-course.html"><i class="fa-brands fa-python" style="color:#ffd43b;"></i> Python</a>
+                    <a href="javascript-course.html"><i class="fa-brands fa-js" style="color:#f7df1e;"></i> JavaScript</a>
+                    <a href="cpp-course.html"><i class="fa-solid fa-microchip" style="color:#00bfff;"></i> C++</a>
+                </div>
+            </div>
+        </div>
+        <div class="rightnav">
+            <a href="login.html" class="login-btn"><span class="login-btn-text">Hyr</span><i class="fa-solid fa-arrow-right-to-bracket login-icon"></i></a>
+        </div>
+    </nav>
+</header>
+
+<section class="course-hero">
+    <div class="course-hero-bg"><img src="media/pexels-peaky-31177054.jpg" alt="JavaScript"></div>
+    <div class="course-hero-overlay"></div>
+    <div class="course-hero-content">
+        <i class="fa-brands fa-js course-hero-icon" style="color:#f7df1e;"></i>
+        <h1>Kursi i JavaScript</h1>
+        <p>Çoje faqen të jetë. Nga DOM manipulation deri te API-t dhe programimi asinkron — JS fuqizon uebin modern.</p>
+    </div>
+</section>
+
+<div class="course-body">
+
+    <div class="course-meta">
+        <div class="course-meta-item"><i class="fa-regular fa-clock"></i><div><strong>22 Orë</strong><span>Kohëzgjatja Totale</span></div></div>
+        <div class="course-meta-item"><i class="fa-solid fa-layer-group"></i><div><strong>Fillestar–Mesatar</strong><span>Niveli</span></div></div>
+        <div class="course-meta-item"><i class="fa-solid fa-certificate"></i><div><strong>Çertifikatë</strong><span>Pas Përfundimit</span></div></div>
+        <div class="course-meta-item"><i class="fa-solid fa-infinity"></i><div><strong>Qasje e Pakufizuar</strong><span>Mëso me Ritmin Tënd</span></div></div>
+    </div>
+
+    <h2 class="course-section-title">Plani Mësimor — kliko çdo temë për të mësuar</h2>
+
+    <div class="course-modules">
+
+        <div class="module-item">
+            <div class="module-header">
+                <div class="module-num">1</div>
+                <div class="module-title-wrap">
+                    <h4>Bazat e JavaScript-it</h4>
+                    <p>Variablat, tipet, operatorët dhe si JS funksionon në shfletues</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2 orë</div>
+                <i class="fa-solid fa-chevron-down module-arrow"></i>
+            </div>
+            <div class="module-body">
+                <p>JavaScript është gjuha e vetme programimi natyrore e shfletuesit. HTML ndërton strukturën, CSS i jep pamje, JS i jep <em>sjellje</em>. Kur klikoni një buton dhe diçka ndodh — ajo është JavaScript.</p>
+                <p>Mënyra moderne e deklarimit të variablave është me <strong>let</strong> dhe <strong>const</strong>. Shmangni <strong>var</strong> — ka probleme scope-i.</p>
+                <code>// Variabla moderne
+const emri = "Arta";         // nuk ndryshon
+let mosha = 20;              // mund të ndryshojë
+mosha = 21;                  // OK me let
+
+// Tipet kryesore
+const tekst = "Përshëndetje";    // string
+const numri = 42;                 // number
+const decimal = 3.14;            // gjithashtu number
+const aktiv = true;              // boolean
+const asnje = null;              // null
+let papercaktuar;                // undefined
+
+// Template literals (strings moderne)
+const mesazh = `Pershendetje, ${emri}! Ke ${mosha} vjec.`;
+console.log(mesazh);
+
+// Operatorë logjikë
+console.log(5 > 3);      // true
+console.log(5 === "5");  // false — === krahason TIP gjithashtu
+console.log(5 == "5");   // true — == konverton tipin (SHMANGNI!)</code>
+                <div class="tip">💡 Gjithmonë përdor === (triple equals) në vend të == (double equals). Triple equals krahason si vlerën ashtu edhe tipin e të dhënave — shumë më i sigurt!</div>
+            </div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header">
+                <div class="module-num">2</div>
+                <div class="module-title-wrap">
+                    <h4>Funksionet dhe Scope-i</h4>
+                    <p>Deklaratat, shprehjet, arrow functions, closures</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2.5 orë</div>
+                <i class="fa-solid fa-chevron-down module-arrow"></i>
+            </div>
+            <div class="module-body">
+                <p>JavaScript ka disa mënyra të shkruash funksione. <strong>Arrow functions</strong> janë sintaksa moderne dhe kompakte — i sheh kudo në kod profesional.</p>
+                <code>// Mënyra tradicionale
+function presto(a, b) {
+    return a + b;
+}
+
+// Function expression
+const presto2 = function(a, b) {
+    return a + b;
+};
+
+// Arrow function — sintaksa moderne ⭐
+const presto3 = (a, b) => a + b;
+const dyfish = x => x * 2;       // një parametër, pa kllapa
+const pershendetje = () => "Hej!"; // pa parametra
+
+// Closures — funksion brenda funksioni
+function krijo_counter() {
+    let count = 0;
+    return function() {
+        count++;
+        return count;
+    };
+}
+
+const counter = krijo_counter();
+console.log(counter()); // 1
+console.log(counter()); // 2
+console.log(counter()); // 3 — count "kujtohet"!
+
+// Scope: let/const janë "block scoped"
+if (true) {
+    let x = 10;
+    const y = 20;
+}
+// console.log(x); // ERROR — x nuk ekziston jashtë blokut</code>
+                <div class="tip">💡 Closures janë nga konceptet më të vështira por edhe të fuqishme të JS. Funksioni i brendshëm "kap" variablat e funksionit të jashtëm — edhe pasi ai funksion ka mbaruar ekzekutimin.</div>
+            </div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header">
+                <div class="module-num">3</div>
+                <div class="module-title-wrap">
+                    <h4>DOM Manipulation</h4>
+                    <p>Zgjedhja e elementëve, ndryshimi i përmbajtjes, trajtimi i ngjarjeve</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 3 orë</div>
+                <i class="fa-solid fa-chevron-down module-arrow"></i>
+            </div>
+            <div class="module-body">
+                <p>DOM (Document Object Model) është mënyra si JavaScript "sheh" HTML-in — si pemë objektesh. Çdo tag HTML bëhet objekt JavaScript që mund ta lexojmë, ndryshojmë ose fshijmë.</p>
+                <code>// Zgjedhja e elementëve
+const titulli = document.querySelector("h1");
+const butonat = document.querySelectorAll(".buton");
+const forma = document.getElementById("forma-kontaktit");
+
+// Ndryshimi i përmbajtjes
+titulli.textContent = "Titulli i Ri!";
+titulli.innerHTML = "Titulli me <strong>bold</strong>";
+
+// Ndryshimi i stilit
+titulli.style.color = "#e07b54";
+titulli.style.fontSize = "48px";
+
+// Shtimi/heqja e klasave CSS
+titulli.classList.add("aktiv");
+titulli.classList.remove("fshehur");
+titulli.classList.toggle("highlight"); // shton nëse mungon, heq nëse ka
+
+// Ngjarjet (Events) — zemra e interaktivitetit
+const butoni = document.querySelector("#butoni-im");
+
+butoni.addEventListener("click", function() {
+    alert("Butonin u klikua!");
+});
+
+// Arrow function — mënyra moderne
+butoni.addEventListener("click", () => {
+    butoni.textContent = "Klikuar!";
+    butoni.disabled = true;
+});
+
+// Forma — parandalim i dërgimit default
+forma.addEventListener("submit", (event) => {
+    event.preventDefault(); // mos rifresko faqen
+    const emri = document.querySelector("#emri").value;
+    console.log("Formulari u dërgua nga:", emri);
+});</code>
+                <div class="tip">💡 querySelector() është mjeti universal modern. getElementById() dhe getElementsByClassName() janë të vjetëruara — mëso querySelector() dhe querySelectorAll() dhe do t'i mbulojë të gjitha rastet.</div>
+            </div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header">
+                <div class="module-num">4</div>
+                <div class="module-title-wrap">
+                    <h4>Array-t dhe Objektet</h4>
+                    <p>Metodat, destrukturimi, spread/rest, JSON</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2 orë</div>
+                <i class="fa-solid fa-chevron-down module-arrow"></i>
+            </div>
+            <div class="module-body">
+                <p>Array-t dhe objektet janë strukturat kryesore të të dhënave në JS. Metodat moderne si <strong>map</strong>, <strong>filter</strong> dhe <strong>reduce</strong> janë thelbësorë — i sheh kudo në kod React, Node.js etj.</p>
+                <code>const studentet = [
+    { emri: "Arta", nota: 9.5 },
+    { emri: "Blerim", nota: 7.0 },
+    { emri: "Çlirim", nota: 8.5 },
+];
+
+// map — transformo çdo element
+const emenat = studentet.map(s => s.emri);
+// ["Arta", "Blerim", "Çlirim"]
+
+// filter — filtro bazuar te kusht
+const mire = studentet.filter(s => s.nota >= 8);
+// [{emri:"Arta",...}, {emri:"Çlirim",...}]
+
+// find — gjej elementin e parë që plotëson kushtin
+const arta = studentet.find(s => s.emri === "Arta");
+
+// reduce — reduko array në një vlerë
+const shuma = studentet.reduce((total, s) => total + s.nota, 0);
+const mesatare = shuma / studentet.length; // 8.33
+
+// Destrukturimi
+const { emri, nota } = studentet[0];
+console.log(emri, nota); // Arta 9.5
+
+const [i_pari, i_dyti] = emenat;
+console.log(i_pari); // Arta
+
+// Spread operator
+const studentet_re = [...studentet, { emri: "Diana", nota: 9.0 }];
+
+// JSON
+const json_tekst = JSON.stringify(studentet);    // objekt → string
+const objekti = JSON.parse(json_tekst);           // string → objekt</code>
+                <div class="tip">💡 map, filter, find dhe reduce janë "funksionale" — kthejnë vlerë të re pa ndryshuar array-in origjinal. Kjo quhet immutability dhe është praktikë e mirë.</div>
+            </div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header">
+                <div class="module-num">5</div>
+                <div class="module-title-wrap">
+                    <h4>JavaScript Asinkron</h4>
+                    <p>Callbacks, Promises, async/await, fetch API</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 3 orë</div>
+                <i class="fa-solid fa-chevron-down module-arrow"></i>
+            </div>
+            <div class="module-body">
+                <p>JavaScript është single-threaded — ekzekuton një gjë në një kohë. Por shumë operacione (kërkesa rrjeti, leximi i skedarëve) <em>marrin kohë</em>. Kodi asinkron e lejon JS të vazhdojë punën ndërkohë që pret — pa ngrirë faqen.</p>
+                <code>// FETCH API — merr të dhëna nga interneti
+// Mënyra moderne me async/await ⭐
+
+async function merr_kodin_e_ditës() {
+    try {
+        // fetch() dërgon kërkesë HTTP
+        const pergjigja = await fetch("https://api.quotable.io/random");
+
+        // kontrollo nëse shkoi mirë
+        if (!pergjigja.ok) {
+            throw new Error("Kërkesa dështoi!");
+        }
+
+        // kthe JSON-in
+        const te_dhenat = await pergjigja.json();
+
+        console.log("Citati:", te_dhenat.content);
+        console.log("Autori:", te_dhenat.author);
+
+        // shfaq në faqe
+        document.querySelector("#citati").textContent = te_dhenat.content;
+
+    } catch (gabim) {
+        console.error("Gabim:", gabim.message);
+        document.querySelector("#gabim").textContent = "Nuk u arrit të lidhet.";
+    }
+}
+
+// thërrite kur faqja ngarkohet
+merr_kodin_e_ditës();
+
+// ose kur klikohet buton
+document.querySelector("#buton-kito").addEventListener("click", merr_kodin_e_ditës);</code>
+                <div class="tip">💡 async/await është shumë më i lexueshëm se Promises zinxhir me .then().catch(). Gjithmonë mbulo await me try/catch — kërkesat e rrjetit mund të dështojnë!</div>
+            </div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header">
+                <div class="module-num">6</div>
+                <div class="module-title-wrap">
+                    <h4>ES6+ — Veçoritë Moderne</h4>
+                    <p>Modulet, klasat, optional chaining, dhe më shumë</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2.5 orë</div>
+                <i class="fa-solid fa-chevron-down module-arrow"></i>
+            </div>
+            <div class="module-body">
+                <p>ES6 (2015) dhe versionet pas tij sollën ndryshime revolucionare. Kodi modern JS është pothuajse i pakuptueshëm pa njohur këto veçori — do t'i shohësh çdo ditë.</p>
+                <code">// Modulet — organizo kodin në skedarë
+// skedari: math.js
+export const PI = 3.14159;
+export function shuma(a, b) { return a + b; }
+export default class Kalkulatori { /* ... */ }
+
+// skedari: main.js
+import Kalkulatori, { PI, shuma } from "./math.js";
+
+// Klasat (ES6)
+class Karroca {
+    #shpejtesia = 0; // fushë private (ES2022)
+
+    constructor(marka) {
+        this.marka = marka;
+    }
+
+    shpejto(vlera) {
+        this.#shpejtesia += vlera;
+        return this; // zinxhirim metodash
+    }
+
+    get info() {
+        return `${this.marka}: ${this.#shpejtesia} km/h`;
+    }
+}
+
+const BMW = new Karroca("BMW").shpejto(50).shpejto(30);
+console.log(BMW.info); // BMW: 80 km/h
+
+// Optional Chaining — shmang gabimet "cannot read property of null"
+const perdoruesi = { profil: { adresa: { qyteti: "Tiranë" } } };
+const qyteti = perdoruesi?.profil?.adresa?.qyteti ?? "E panjohur";
+// Nëse cilado nga këto është null/undefined → "E panjohur"
+
+// Nullish Coalescing (??)
+const emri = null ?? "Mysafir";  // "Mysafir"
+const numri = 0 ?? 42;           // 0 (0 nuk është null!)</code>
+                <div class="tip">💡 Optional chaining (?.) dhe nullish coalescing (??) janë dy nga veçoritë më praktike të JS modern. Shumë bug-a të zakonshëm "cannot read properties of undefined" zhduken me ?..</div>
+            </div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header">
+                <div class="module-num">7</div>
+                <div class="module-title-wrap">
+                    <h4>Projekti Final — Aplikacion Interaktiv Ueb</h4>
+                    <p>Ndërto një aplikacion të plotë duke përdorur API-t reale</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 7 orë</div>
+                <i class="fa-solid fa-chevron-down module-arrow"></i>
+            </div>
+            <div class="module-body">
+                <p>Do të ndërtojmë një aplikacion moti (Weather App) real duke lidhur me API publike. Aplikacioni do të marrë vendndodhjen e përdoruesit, do të kërkojë të dhëna moti live dhe do t'i shfaqë me animacione.</p>
+                <code>// Weather App — Struktura kryesore
+async function merr_motin(qyteti) {
+    const API_KEY = "çelësi_yt_nga_openweathermap";
+    const URL = `https://api.openweathermap.org/data/2.5/weather?q=${qyteti}&appid=${API_KEY}&units=metric&lang=al`;
+
+    const resp = await fetch(URL);
+    const data = await resp.json();
+
+    shfaq_motin({
+        qyteti: data.name,
+        temperatura: Math.round(data.main.temp),
+        pershkrimi: data.weather[0].description,
+        lagështia: data.main.humidity,
+        era: data.wind.speed,
+        ikona: data.weather[0].icon
+    });
+}
+
+function shfaq_motin(moti) {
+    document.querySelector("#qyteti").textContent = moti.qyteti;
+    document.querySelector("#temperatura").textContent = `${moti.temperatura}°C`;
+    document.querySelector("#pershkrim").textContent = moti.pershkrimi;
+    document.querySelector("#ikona").src =
+        `https://openweathermap.org/img/wn/${moti.ikona}@2x.png`;
+}
+
+// Kërko me Enter
+document.querySelector("#input-qytet")
+    .addEventListener("keypress", e => {
+        if (e.key === "Enter") merr_motin(e.target.value);
+    });</code>
+                <div class="tip">🎉 Pas kësaj ke aftësi për të aplikuar si Frontend Developer fillestar! Hapi tjetër: mëso React.js — framework-u nr.1 i industrisë për ndërtimin e UI-eve komplekse.</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h3>KODAL</h3>
+            <p>Platformë mësimi programimi e bërë për studentë shqiptarë.</p>
+            <div class="footer-social-icons">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <h4>Kurset</h4>
+            <ul>
+                <li><a href="html-course.html">HTML</a></li>
+                <li><a href="css-course.html">CSS</a></li>
+                <li><a href="python-course.html">Python</a></li>
+                <li><a href="javascript-course.html">JavaScript</a></li>
+                <li><a href="cpp-course.html">C++</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Kompania</h4>
+            <ul>
+                <li><a href="index.html">Kryefaqja</a></li>
+                <li><a href="contact.html">Rreth Nesh</a></li>
+                <li><a href="contact.html">Kontaktet</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact-block">
+            <h4>Kontakte</h4>
+            <p><i class="fa-solid fa-envelope"></i> info@codelearn.com</p>
+            <p><i class="fa-solid fa-phone"></i> +355 6x xx xx xxx</p>
+            <p><i class="fa-solid fa-location-dot"></i> Tiranë, Shqipëri</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 KodAl. Të gjitha të drejtat e rezervuara.</p>
+        <div class="footer-bottom-links">
+            <a href="#">Privatësia</a>
+            <a href="#">Kushtet</a>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.querySelectorAll('.module-header').forEach(header => {
+    header.addEventListener('click', () => {
+        const item = header.closest('.module-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.module-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+    });
+});
+</script>
+
+    <script src="auth.js"></script>
+    <script src="course.js"></script>
+
+</body>
+</html>

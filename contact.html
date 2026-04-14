@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontaktet & Rreth Nesh – KODAL</title>
+    <link rel="stylesheet" href="stylee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <nav class="toolbar">
+        <div class="logo-container">
+            <img src="media/zril.png" alt="Site Logo">
+        </div>
+        <div class="leftnav">
+            <a href="index.html">Kryefaqja</a>
+            <a href="contact.html">Kontaktet</a>
+            <div class="dropdown-wrapper">
+                <button class="dropdown-trigger">Kurset <span class="arrow">&#9660;</span></button>
+                <div class="dropdown-menu">
+                    <a href="html-course.html"><i class="fa-brands fa-html5" style="color:#e34c26;"></i> HTML</a>
+                    <a href="css-course.html"><i class="fa-brands fa-css3-alt" style="color:#264de4;"></i> CSS</a>
+                    <a href="python-course.html"><i class="fa-brands fa-python" style="color:#ffd43b;"></i> Python</a>
+                    <a href="javascript-course.html"><i class="fa-brands fa-js" style="color:#f7df1e;"></i> JavaScript</a>
+                    <a href="cpp-course.html"><i class="fa-solid fa-microchip" style="color:#00bfff;"></i> C++</a>
+                </div>
+            </div>
+        </div>
+        <div class="rightnav">
+            <a href="login.html" class="login-btn">
+                <span class="login-btn-text">Hyr</span>
+                <i class="fa-solid fa-arrow-right-to-bracket login-icon"></i>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<div class="contact-hero">
+    <div class="contact-hero-content">
+        <h1>Na Shkruaj <br>Jemi Këtu! 👋</h1>
+        <p>Kemi një pyetje? Dëshiron të regjistrohesh? A ke ndonjë ide? Na kontakto lirisht.</p>
+    </div>
+</div>
+
+<section class="contact-page">
+    <div class="contact-grid">
+        <div class="contact-info">
+            <h2>Si mund të na gjesh?</h2>
+            <p>Jemi ekip i vogël por i dedikuar. Përgjigjemi sa më shpejt që mundemi.</p>
+
+            <div class="contact-detail">
+                <div class="contact-detail-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div><strong>Email</strong><span>hello@kodal.al</span></div>
+            </div>
+            <div class="contact-detail">
+                <div class="contact-detail-icon"><i class="fa-solid fa-phone"></i></div>
+                <div><strong>Telefon</strong><span>+355 69 123 4567</span></div>
+            </div>
+            <div class="contact-detail">
+                <div class="contact-detail-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div><strong>Adresa</strong><span>Tiranë, Shqipëri</span></div>
+            </div>
+            <div class="contact-detail">
+                <div class="contact-detail-icon"><i class="fa-brands fa-instagram"></i></div>
+                <div><strong>Instagram</strong><span>@kod.al</span></div>
+            </div>
+        </div>
+
+        <div class="contact-form-box">
+            <h3>Dërgo Mesazh ✉️</h3>
+
+            <div class="contact-form-status" id="contact-status" style="display:none;"></div>
+
+            <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="contact-form" netlify>
+                <input type="hidden" name="form-name" value="contact">
+                <p class="hidden-honeypot">
+                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                </p>
+
+                <div class="form-group">
+                    <label for="contact-name">Emri</label>
+                    <input type="text" id="contact-name" name="name" placeholder="Vendos emrin" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">Email</label>
+                    <input type="email" id="contact-email" name="email" placeholder="emaili@yt.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-course">Kurs i Interesuar</label>
+                    <select id="contact-course" name="course">
+                        <option value="">-- Zgjidh Kursin --</option>
+                        <option>HTML</option>
+                        <option>CSS</option>
+                        <option>Python</option>
+                        <option>JavaScript</option>
+                        <option>C++</option>
+                        <option>Nuk kam vendosur akoma</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">Mesazhi Yt</label>
+                    <textarea id="contact-message" name="message" placeholder="Shkruaj pyetjen ose mesazhin tënd këtu..." required></textarea>
+                </div>
+                <button class="form-submit" type="submit">Dërgo Mesazhin →</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<section class="about-us-section">
+    <div class="section-header">
+        <span class="section-label">Rreth Nesh</span>
+        <h2>Kush jemi ne?</h2>
+    </div>
+    <p>KodAl është një platformë mësimi e krijuar nga studentë, për studentë. E filluam sepse pamë sa e vështirë është të gjesh materiale të mira programimi në shqip. Kështu vendosëm t'i bëjmë vetë.</p>
+    <p>Nuk jemi korporatë e madhe. Jemi grup i vogël njerëzish që duan të ndihmojnë të tjerë të mësojnë programim pa vështirësi të panevojshme.</p>
+    <p>Aktualisht ofrojmë 5 kurse — por po punojmë çdo ditë për të shtuar më shumë lëndë, ushtrime dhe projekte. Nëse ke ide ose dëshiron të kontribuosh, na shkruaj!</p>
+    <div class="team-grid">
+        <div class="team-card">
+            <img src="media/zr.png" alt="Team 1">
+            <h4>Zana</h4>
+            <span>UI & Design</span>
+        </div>
+        <div class="team-card">
+            <img src="media/Kodal logo with ribbon design.png" alt="Team 2">
+            <h4>Ardi</h4>
+            <span>Content & Teaching</span>
+        </div>
+        <div class="team-card">
+            <img src="media/Untitled design (1).png" alt="Team 3">
+            <h4>Elira</h4>
+            <span>Development</span>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-inner">
+        <div class="footer-col">
+            <img src="media/zril.png" alt="Kodal Logo">
+            <p>Kurset më të thjeshta dhe më të mira për programim në shqip.</p>
+        </div>
+        <div class="footer-col">
+            <h4>Lidhje të shpejta</h4>
+            <a href="index.html">Kryefaqja</a>
+            <a href="contact.html">Kontaktet</a>
+            <a href="login.html">Hyr</a>
+        </div>
+        <div class="footer-col">
+            <h4>Kontakt</h4>
+            <p>Email: hello@kodal.al</p>
+            <p>Tel: +355 69 123 4567</p>
+        </div>
+    </div>
+</footer>
+
+<script src="auth.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('contact-status');
+    const button = document.querySelector('.form-submit');
+
+    const showStatus = (message, ok = true) => {
+        status.textContent = message;
+        status.className = `contact-form-status ${ok ? 'success' : 'error'}`;
+        status.style.display = 'block';
+    };
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        button.disabled = true;
+        button.textContent = 'Duke dërguar...';
+
+        const formData = new FormData(form);
+        const body = new URLSearchParams();
+        for (const [key, value] of formData.entries()) body.append(key, value);
+
+        try {
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: body.toString(),
+            });
+
+            if (!response.ok && response.status !== 200) {
+                throw new Error('Submission failed');
+            }
+
+            form.reset();
+            showStatus('Mesazhi u dërgua. Do të shfaqet në Netlify → Forms, dhe mund të marrësh njoftime me email nga konfigurimi i projektit.', true);
+        } catch (err) {
+            showStatus('Nuk u dërgua ende. Kontrollo që forma është në deploy-in e Netlify dhe provo përsëri.', false);
+        } finally {
+            button.disabled = false;
+            button.textContent = 'Dërgo Mesazhin →';
+        }
+    });
+});
+</script>
+</body>
+</html>

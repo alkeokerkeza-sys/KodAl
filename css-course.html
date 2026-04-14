@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursi i CSS – KodAl</title>
+    <link rel="stylesheet" href="stylee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<header><nav class="toolbar">
+    <div class="logo-container"><img src="media/zril.png" alt="Logo"></div>
+    <div class="leftnav">
+        <a href="index.html">Kryefaqja</a>
+        <a href="contact.html">Kontakte</a>
+        <div class="dropdown-wrapper">
+            <button class="dropdown-trigger">Kurset <span class="arrow">&#9660;</span></button>
+            <div class="dropdown-menu">
+                <a href="html-course.html"><i class="fa-brands fa-html5" style="color:#e34c26;"></i> HTML</a>
+                <a href="css-course.html"><i class="fa-brands fa-css3-alt" style="color:#264de4;"></i> CSS</a>
+                <a href="python-course.html"><i class="fa-brands fa-python" style="color:#ffd43b;"></i> Python</a>
+                <a href="javascript-course.html"><i class="fa-brands fa-js" style="color:#f7df1e;"></i> JavaScript</a>
+                <a href="cpp-course.html"><i class="fa-solid fa-microchip" style="color:#00bfff;"></i> C++</a>
+            </div>
+        </div>
+    </div>
+        <div class="rightnav">
+            <a href="login.html" class="login-btn">
+                <span class="login-btn-text">Hyr</span>
+                <i class="fa-solid fa-arrow-right-to-bracket login-icon"></i>
+            </a>
+        </div></div>
+</nav></header>
+
+<section class="course-hero">
+    <div class="course-hero-bg"><img src="media/pexels-peaky-31177054.jpg" alt="CSS"></div>
+    <div class="course-hero-overlay"></div>
+    <div class="course-hero-content">
+        <i class="fa-brands fa-css3-alt course-hero-icon" style="color:#264de4;"></i>
+        <h1>Kursi i CSS</h1>
+        <p>Bëj faqet të duken bukur! CSS është ajo që kthen HTML-in e bardhë e të zezë në diçka të vërtetë.</p>
+    </div>
+</section>
+
+<div class="course-body">
+    <div class="course-meta">
+        <div class="course-meta-item"><i class="fa-regular fa-clock"></i><div><strong>16 Orë</strong><span>Kohëzgjatja</span></div></div>
+        <div class="course-meta-item"><i class="fa-solid fa-layer-group"></i><div><strong>Fillestar–Mes</strong><span>Niveli</span></div></div>
+        <div class="course-meta-item"><i class="fa-solid fa-certificate"></i><div><strong>Certifikatë</strong><span>Pas Përfundimit</span></div></div>
+        <div class="course-meta-item"><i class="fa-solid fa-infinity"></i><div><strong>Qasje e Përjetshme</strong><span>Mëso Kur Të Duash</span></div></div>
+    </div>
+
+    <h2 class="course-section-title">📚 Plani Mësimor — kliko çdo temë!</h2>
+    <div class="course-modules">
+
+        <div class="module-item">
+            <div class="module-header" onclick="toggleModule(this)">
+                <div class="module-num">1</div>
+                <div class="module-header-text"><h4>Bazat e CSS dhe Selektorët</h4><p>Si i lidhim stilet me elementet HTML</p></div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>CSS (Cascading Style Sheets) është gjuha me të cilën "vishen" faqet HTML. Pa CSS, çdo faqe duket si dokument teksti i thjeshtë. CSS i tregon browserit: ky tekst duhet të jetë i kuq, kjo kuti duhet të ketë 20px hapësirë, ky buton duhet të ketë sfond blu.</p>
+                <p>Ka 3 mënyra si e lidhim CSS-in me HTML-in:</p>
+                <div class="code-block"><span class="c">/* 1. Menyra me e mire - file i vecante */</span>
+<span class="tag">&lt;link</span> <span class="at">rel</span>=<span class="val">"stylesheet"</span> <span class="at">href</span>=<span class="val">"stili.css"</span><span class="tag">&gt;</span>
+
+<span class="c">/* 2. Brenda &lt;style&gt; ne &lt;head&gt; */</span>
+<span class="tag">&lt;style&gt;</span>
+  p { color: blue; }
+<span class="tag">&lt;/style&gt;</span>
+
+<span class="c">/* 3. Inline - direkt ne element (shmangie!) */</span>
+<span class="tag">&lt;p</span> <span class="at">style</span>=<span class="val">"color: blue;"</span><span class="tag">&gt;</span>Tekst blu<span class="tag">&lt;/p&gt;</span></div>
+                <p>Selektorët janë si "çelësat" — tregojnë <em>cilit</em> element i japim stilin:</p>
+                <div class="code-block"><span class="c">/* Selektori i tagjit - te gjithe p */</span>
+p { color: #333; }
+
+<span class="c">/* Selektori i klasës - elementet me class="kartë" */</span>
+.karte { background: white; border-radius: 8px; }
+
+<span class="c">/* Selektori i ID - elementi me id="hero" */</span>
+#hero { height: 100vh; }
+
+<span class="c">/* Selektori i kombinuar */</span>
+.karte p { font-size: 14px; }</div>
+                <div class="tip"><strong>💡 Klas vs ID:</strong> Klasa (.karte) mund të përdoret tek shumë elementë. ID (#hero) duhet të jetë unik — vetëm një element në faqe. Prefero gjithmonë klasat!</div>
+            </div></div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header" onclick="toggleModule(this)">
+                <div class="module-num">2</div>
+                <div class="module-header-text"><h4>Ngjyrat, Tipografia dhe Njësitë</h4><p>Fontet, madhësitë dhe sistemi i ngjyrave</p></div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>Ngjyrat në CSS mund të shkruhen në disa mënyra. Hex është forma më e zakonshme — 6 karaktere që kodojnë të kuqen, të gjelbërtën dhe të kaltërtën:</p>
+                <div class="code-block"><span class="c">/* Ngjyrat */</span>
+color: <span class="str">#ff0000</span>;        <span class="c">/* hex - e kuqe */</span>
+color: <span class="str">rgb(255, 0, 0)</span>;  <span class="c">/* RGB */</span>
+color: <span class="str">hsl(0, 100%, 50%)</span>; <span class="c">/* HSL - me e lehte per te kuptuar */</span>
+color: <span class="str">red</span>;             <span class="c">/* emri i ngjyres */</span>
+
+<span class="c">/* Njësite e madhesise */</span>
+font-size: <span class="num">16px</span>;    <span class="c">/* pixel - absolute */</span>
+font-size: <span class="num">1rem</span>;    <span class="c">/* relative ndaj root (zakonisht 16px) */</span>
+font-size: <span class="num">1.2em</span>;   <span class="c">/* relative ndaj prindit */</span>
+width: <span class="num">50%</span>;         <span class="c">/* perqindje e prindit */</span>
+width: <span class="num">50vw</span>;        <span class="c">/* 50% e gjeresise se ekranit */</span>
+
+<span class="c">/* Fontet nga Google Fonts */</span>
+<span class="kw">@import</span> url(<span class="str">'https://fonts.googleapis.com/css2?family=Roboto'</span>);
+body { font-family: <span class="str">'Roboto'</span>, sans-serif; }</div>
+                <div class="tip"><strong>💡 Prefero rem:</strong> Nëse vendos madhësinë e tekstit si <code>rem</code> (jo px), faqja respekton preferencat e aksesueshmërisë të përdoruesit. Kjo është praktikë e mirë!</div>
+            </div></div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header" onclick="toggleModule(this)">
+                <div class="module-num">3</div>
+                <div class="module-header-text"><h4>Flexbox — Paraqitja 1D</h4><p>Mëso Flexbox dhe harro luftën me layout</p></div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2.5 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>Flexbox e zgjidhi problemin më të vjetër të CSS — qendrimi i elementeve. Me 2 rreshta kodi, mund të qendrosh çdo gjë horizontalisht dhe vertikalisht:</p>
+                <div class="code-block"><span class="c">/* Qendro cdo gje brenda .container */</span>
+.container {
+  display: <span class="kw">flex</span>;
+  justify-content: <span class="kw">center</span>;  <span class="c">/* horizontal */</span>
+  align-items: <span class="kw">center</span>;     <span class="c">/* vertikal */</span>
+  gap: <span class="num">20px</span>;              <span class="c">/* hapesire mes elementeve */</span>
+}
+
+<span class="c">/* Navigim horizontal */</span>
+.navbar {
+  display: <span class="kw">flex</span>;
+  justify-content: <span class="kw">space-between</span>; <span class="c">/* logo majtas, menu djathtas */</span>
+  align-items: <span class="kw">center</span>;
+  padding: <span class="num">15px 30px</span>;
+}
+
+<span class="c">/* Karta te shperndarjes se barabarte */</span>
+.cards {
+  display: <span class="kw">flex</span>;
+  gap: <span class="num">20px</span>;
+  flex-wrap: <span class="kw">wrap</span>; <span class="c">/* kalon ne rresht te ri nese nuk ka vend */</span>
+}
+.card { flex: <span class="num">1</span>; min-width: <span class="num">200px</span>; }</div>
+                <div class="tip"><strong>💡 Flexbox Froggy:</strong> Mëso Flexbox duke luajtur lojën falas "Flexbox Froggy" (flexboxfroggy.com). Shumë më mirë se të lexosh teori!</div>
+            </div></div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header" onclick="toggleModule(this)">
+                <div class="module-num">4</div>
+                <div class="module-header-text"><h4>CSS Grid — Paraqitja 2D</h4><p>Grids për faqe të plota dhe komplekse</p></div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2.5 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>Nëse Flexbox është për rreshta dhe kolona (1D), Grid është për dy dimensione njëherësh. Perfekt për faqe të plota me header, sidebar, content, footer:</p>
+                <div class="code-block"><span class="c">/* Grid 3 kolona te barabarta */</span>
+.grid {
+  display: <span class="kw">grid</span>;
+  grid-template-columns: <span class="kw">1fr 1fr 1fr</span>; <span class="c">/* ose: repeat(3, 1fr) */</span>
+  gap: <span class="num">24px</span>;
+}
+
+<span class="c">/* Layout i plote i faqes */</span>
+.faqja {
+  display: <span class="kw">grid</span>;
+  grid-template-areas:
+    <span class="str">"header header"</span>
+    <span class="str">"sidebar content"</span>
+    <span class="str">"footer footer"</span>;
+  grid-template-columns: <span class="num">250px</span> <span class="kw">1fr</span>;
+}
+header { grid-area: <span class="kw">header</span>; }
+.sidebar { grid-area: <span class="kw">sidebar</span>; }
+.content { grid-area: <span class="kw">content</span>; }
+footer { grid-area: <span class="kw">footer</span>; }
+
+<span class="c">/* Grid responsive pa media queries! */</span>
+.karta-grid {
+  display: <span class="kw">grid</span>;
+  grid-template-columns: repeat(<span class="kw">auto-fit</span>, minmax(<span class="num">200px</span>, <span class="kw">1fr</span>));
+  gap: <span class="num">20px</span>;
+}</div>
+                <div class="tip"><strong>💡 auto-fit + minmax:</strong> Ky kombinim magjik krijon grids responsivë automatikisht — pa shkruar asnjë media query! Elementët rregullohen vetë sipas gjerësisë së ekranit.</div>
+            </div></div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header" onclick="toggleModule(this)">
+                <div class="module-num">5</div>
+                <div class="module-header-text"><h4>Animacionet dhe Tranzicionet</h4><p>Lëvizje dhe efekte me CSS</p></div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>Tranzicionet janë kalimi i butë nga një stil te tjetri — zakonisht kur hoverohet mbi element:</p>
+                <div class="code-block"><span class="c">/* Tranzicion i thjeshte */</span>
+.butoni {
+  background: blue;
+  transition: <span class="kw">all</span> <span class="num">0.3s</span> ease; <span class="c">/* çfare, sa kohë, si */</span>
+}
+.butoni:hover {
+  background: darkblue;
+  transform: scale(<span class="num">1.05</span>);
+}
+
+<span class="c">/* Animacion me @keyframes */</span>
+<span class="kw">@keyframes</span> pulso {
+  <span class="num">0%</span>   { transform: scale(<span class="num">1</span>); }
+  <span class="num">50%</span>  { transform: scale(<span class="num">1.1</span>); }
+  <span class="num">100%</span> { transform: scale(<span class="num">1</span>); }
+}
+
+.zemra {
+  animation: pulso <span class="num">1s</span> infinite;
+}
+
+<span class="c">/* Efekte te shpeshta */</span>
+.karte:hover { transform: translateY(<span class="num">-8px</span>); } <span class="c">/* ngrihet */</span>
+.foto:hover  { opacity: <span class="num">0.8</span>; }              <span class="c">/* zbehet */</span></div>
+                <div class="tip"><strong>💡 Mos exagjeroj!</strong> Animacionet janë bukur kur janë të pakta dhe të qëlluara. Shumë lëvizje njëherësh e bëjnë faqen të duket amatore. Më pak = më mirë.</div>
+            </div></div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header" onclick="toggleModule(this)">
+                <div class="module-num">6</div>
+                <div class="module-header-text"><h4>Design Responsiv</h4><p>Faqe që duket mirë në çdo ekran</p></div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>Sot mbi 60% e trafikut vjen nga telefonat. Faqja jote DUHET të duket mirë në ekrane të vogla. Media queries janë zgjidhja:</p>
+                <div class="code-block"><span class="c">/* Mobile-first: fillojmë me stilin e telefonit */</span>
+.grid { display: block; }  <span class="c">/* kolona te veanta ne telefon */</span>
+
+<span class="c">/* Tablet: 600px e lart */</span>
+<span class="kw">@media</span> (min-width: <span class="num">600px</span>) {
+  .grid { display: grid; grid-template-columns: <span class="num">1fr 1fr</span>; }
+}
+
+<span class="c">/* Desktop: 1024px e lart */</span>
+<span class="kw">@media</span> (min-width: <span class="num">1024px</span>) {
+  .grid { grid-template-columns: repeat(<span class="num">3</span>, <span class="num">1fr</span>); }
+  .hero-title { font-size: <span class="num">72px</span>; }
+}
+
+<span class="c">/* Tipografi fluide - pa media queries! */</span>
+.titulli {
+  font-size: clamp(<span class="num">24px</span>, <span class="num">5vw</span>, <span class="num">64px</span>);
+  <span class="c">/* min: 24px, prefered: 5% ekranit, max: 64px */</span>
+}</div>
+                <div class="tip"><strong>💡 Meta viewport!</strong> Mos harro të vendosësh &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt; në &lt;head&gt;. Pa këtë, telefoni tregon faqen të zvogëluar!</div>
+            </div></div>
+        </div>
+
+        <div class="module-item">
+            <div class="module-header" onclick="toggleModule(this)">
+                <div class="module-num">7</div>
+                <div class="module-header-text"><h4>🎯 Projekti Final — Portfolio Personal</h4><p>Bëj faqen tënde personale me CSS të plotë</p></div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 3 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>Projekti final: <strong>portfolio personal responsiv</strong> — faqe ku prezanton veten dhe aftësitë tua. Do të ketë:</p>
+                <p>- Navbar fiks me Flexbox<br>- Hero section me text qendror<br>- Seksion aftësish me Grid<br>- Hover efekte në kartat<br>- Footer i plotë<br>- Funksionon mirë në telefon dhe desktop</p>
+                <div class="code-block">portfolio/
+├── index.html
+├── stili.css
+└── images/
+    └── foto-ime.jpg</div>
+                <div class="tip"><strong>🎉 Kur ta përfundosh</strong> — shko te GitHub Pages dhe publikoje falas! Paste linkun — do ta shikojmë dhe do të japim feedback!</div>
+            </div></div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h3>KODAL</h3>
+            <p>Platformë mësimi programimi e bërë për studentë shqiptarë.</p>
+            <div class="footer-social-icons">
+                <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-links">
+            <h4>Kurset</h4>
+            <ul>
+                <li><a href="html-course.html">HTML</a></li>
+                <li><a href="css-course.html">CSS</a></li>
+                <li><a href="python-course.html">Python</a></li>
+                <li><a href="javascript-course.html">JavaScript</a></li>
+                <li><a href="cpp-course.html">C++</a></li>
+            </ul>
+        </div>
+        <div class="footer-links">
+            <h4>Kompania</h4>
+            <ul>
+                <li><a href="index.html">Kryefaqja</a></li>
+                <li><a href="contact.html">Rreth Nesh</a></li>
+                <li><a href="contact.html">Kontaktet</a></li>
+            </ul>
+        </div>
+        <div class="footer-contact-block">
+            <h4>Kontakte</h4>
+            <p><i class="fa-solid fa-envelope"></i> info@codelearn.com</p>
+            <p><i class="fa-solid fa-phone"></i> +355 6x xx xx xxx</p>
+            <p><i class="fa-solid fa-location-dot"></i> Tiranë, Shqipëri</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 KodAl. Të gjitha të drejtat e rezervuara.</p>
+        <div class="footer-bottom-links">
+            <a href="#">Privatësia</a>
+            <a href="#">Kushtet</a>
+        </div>
+    </div>
+</footer>
+
+<script>function toggleModule(h){h.parentElement.classList.toggle('open');}</script>
+
+    <script src="auth.js"></script>
+    <script src="course.js"></script>
+
+</body>
+</html>

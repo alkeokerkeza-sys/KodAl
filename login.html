@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyr – KodAl</title>
+    <link rel="stylesheet" href="stylee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="login-page">
+    <div class="login-video-bg">
+        <video autoplay muted loop playsinline poster="media/14146549_3840_2160_25fps.mp4">
+            <source src="media/14146549_3840_2160_25fps.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="login-video-overlay"></div>
+
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="index.html"><img src="media/zril.png" alt="KodAl Logo"></a>
+        </div>
+
+        <h2>Mirë se u ktheve!</h2>
+        <p class="login-sub">Hyr në llogarinë tënde KodAl</p>
+
+        <div class="login-error" id="login-error" style="display:none;"></div>
+        <div class="login-success" id="login-success" style="display:none;">
+            <i class="fa-solid fa-circle-check"></i> U kyçe me sukses! Duke të ridrejtuar...
+        </div>
+
+        <form id="login-form" netlify>
+            <div class="login-field">
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" placeholder="emaili@yt.com" required>
+            </div>
+            <div class="login-field">
+                <label for="login-password">Fjalëkalimi</label>
+                <input type="password" id="login-password" placeholder="••••••••" required>
+            </div>
+
+            <div style="text-align:right; margin-bottom:18px;">
+                <a href="#" style="font-size:13px; color:rgba(245,239,230,0.5); text-decoration:none;">Harrove fjalëkalimin?</a>
+            </div>
+
+            <button type="submit" class="login-submit">
+                <i class="fa-solid fa-arrow-right-to-bracket" style="margin-right:8px;"></i>
+                Hyr
+            </button>
+        </form>
+
+        <div class="login-divider">ose</div>
+
+        <div class="login-footer-text">
+            Nuk ke llogari?
+            <a href="register.html">Regjistrohu këtu</a>
+        </div>
+    </div>
+</div>
+
+<script src="auth.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('login-form');
+    const errorBox = document.getElementById('login-error');
+    const successBox = document.getElementById('login-success');
+    const btn = document.querySelector('.login-submit');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        errorBox.style.display = 'none';
+        successBox.style.display = 'none';
+
+        const email = document.getElementById('login-email').value;
+        const password = document.getElementById('login-password').value;
+
+        try {
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="margin-right:8px;"></i>Duke hyrë...';
+            window.KodAlAuth.loginUser(email, password);
+            successBox.style.display = 'block';
+            setTimeout(() => { window.location.href = 'index.html'; }, 900);
+        } catch (err) {
+            errorBox.textContent = err.message || 'Diçka shkoi keq.';
+            errorBox.style.display = 'block';
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fa-solid fa-arrow-right-to-bracket" style="margin-right:8px;"></i>Hyr';
+        }
+    });
+});
+</script>
+
+</body>
+</html>

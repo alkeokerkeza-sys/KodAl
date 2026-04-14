@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regjistrohu – KodAl</title>
+    <link rel="stylesheet" href="stylee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="login-page">
+    <div class="login-video-bg">
+        <video autoplay muted loop playsinline poster="media/14146549_3840_2160_25fps.mp4">
+            <source src="media/14146549_3840_2160_25fps.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="login-video-overlay"></div>
+
+    <div class="login-box">
+        <div class="login-logo">
+            <a href="index.html"><img src="media/zril.png" alt="KodAl Logo"></a>
+        </div>
+
+        <h2>Krijo llogarinë tënde</h2>
+        <p class="login-sub">Regjistrohu dhe fillo mësimin menjëherë</p>
+
+        <div class="login-error" id="register-error" style="display:none;"></div>
+        <div class="login-success" id="register-success" style="display:none;">
+            <i class="fa-solid fa-circle-check"></i> U regjistrove me sukses! Duke të ridrejtuar...
+        </div>
+
+        <form id="register-form" netlify>
+            <div class="login-field">
+                <label for="register-name">Emri dhe mbiemri</label>
+                <input type="text" id="register-name" placeholder="P.sh. Arta Kola" required>
+            </div>
+            <div class="login-field">
+                <label for="register-email">Email</label>
+                <input type="email" id="register-email" placeholder="emaili@yt.com" required>
+            </div>
+            <div class="login-field">
+                <label for="register-password">Fjalëkalimi</label>
+                <input type="password" id="register-password" placeholder="••••••••" required>
+            </div>
+            <div class="login-field">
+                <label for="register-confirm">Përsërit fjalëkalimin</label>
+                <input type="password" id="register-confirm" placeholder="••••••••" required>
+            </div>
+
+            <button type="submit" class="login-submit">
+                <i class="fa-solid fa-user-plus" style="margin-right:8px;"></i>
+                Regjistrohu
+            </button>
+        </form>
+
+        <div class="login-divider">ose</div>
+
+        <div class="login-footer-text">
+            Ke tashmë llogari?
+            <a href="login.html">Hyr këtu</a>
+        </div>
+    </div>
+</div>
+
+<script src="auth.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('register-form');
+    const errorBox = document.getElementById('register-error');
+    const successBox = document.getElementById('register-success');
+    const btn = document.querySelector('.login-submit');
+
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        errorBox.style.display = 'none';
+        successBox.style.display = 'none';
+
+        const name = document.getElementById('register-name').value;
+        const email = document.getElementById('register-email').value;
+        const password = document.getElementById('register-password').value;
+        const confirm = document.getElementById('register-confirm').value;
+
+        if (password !== confirm) {
+            errorBox.textContent = 'Fjalëkalimet nuk përputhen.';
+            errorBox.style.display = 'block';
+            return;
+        }
+
+        try {
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="margin-right:8px;"></i>Duke u regjistruar...';
+            window.KodAlAuth.registerUser({ name, email, password });
+            successBox.style.display = 'block';
+            setTimeout(() => { window.location.href = 'index.html'; }, 900);
+        } catch (err) {
+            errorBox.textContent = err.message || 'Diçka shkoi keq.';
+            errorBox.style.display = 'block';
+            btn.disabled = false;
+            btn.innerHTML = '<i class="fa-solid fa-user-plus" style="margin-right:8px;"></i>Regjistrohu';
+        }
+    });
+});
+</script>
+
+</body>
+</html>

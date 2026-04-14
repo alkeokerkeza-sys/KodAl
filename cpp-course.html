@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kursi C++ – KodAl</title>
+    <link rel="stylesheet" href="stylee.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<header>
+    <nav class="toolbar">
+        <div class="logo-container"><img src="media/zril.png" alt="KodAl Logo"></div>
+        <div class="leftnav">
+            <a href="index.html">Kryefaqja</a>
+            <a href="contact.html">Kontaktet</a>
+            <div class="dropdown-wrapper">
+                <button class="dropdown-trigger">Kurset <span class="arrow">&#9660;</span></button>
+                <div class="dropdown-menu">
+                    <a href="html-course.html"><i class="fa-brands fa-html5" style="color:#e34c26;"></i> HTML</a>
+                    <a href="css-course.html"><i class="fa-brands fa-css3-alt" style="color:#264de4;"></i> CSS</a>
+                    <a href="python-course.html"><i class="fa-brands fa-python" style="color:#ffd43b;"></i> Python</a>
+                    <a href="javascript-course.html"><i class="fa-brands fa-js" style="color:#f7df1e;"></i> JavaScript</a>
+                    <a href="cpp-course.html"><i class="fa-solid fa-microchip" style="color:#00bfff;"></i> C++</a>
+                </div>
+            </div>
+        </div>
+        <div class="rightnav">
+            <a href="login.html" class="login-btn">
+                <span class="login-btn-text">Hyr</span>
+                <i class="fa-solid fa-arrow-right-to-bracket login-icon"></i>
+            </a>
+        </div>
+    </nav>
+</header>
+
+<section class="course-hero">
+    <div class="course-hero-bg">
+        <img src="media/pexels-peaky-31177054.jpg" alt="C++ kursi">
+    </div>
+    <div class="course-hero-overlay"></div>
+    <div class="course-hero-content">
+        <i class="fa-solid fa-microchip course-hero-icon" style="color:#00bfff;"></i>
+        <h1>Kursi i C++</h1>
+        <p>Mëso si funksionojnë kompjuterët nga brenda. Shkruaj softuer ultra të shpejtë, lojëra dhe programe sistemi me gjuhën që lëviz industrinë.</p>
+    </div>
+</section>
+
+<div class="course-body">
+    <div class="course-meta">
+        <div class="course-meta-item"><i class="fa-regular fa-clock"></i><div><strong>24 Orë</strong><span>Kohëzgjatja</span></div></div>
+        <div class="course-meta-item"><i class="fa-solid fa-layer-group"></i><div><strong>Mesatar</strong><span>Niveli</span></div></div>
+        <div class="course-meta-item"><i class="fa-solid fa-certificate"></i><div><strong>Çertifikatë</strong><span>Pas Përfundimit</span></div></div>
+        <div class="course-meta-item"><i class="fa-solid fa-infinity"></i><div><strong>Qasje e Pakufizuar</strong><span>Mëso me Ritmin Tënd</span></div></div>
+    </div>
+
+    <h2 class="course-section-title">Plani Mësimor — kliko çdo temë për të mësuar</h2>
+
+    <div class="course-modules">
+
+        <!-- MODULE 1 -->
+        <div class="module-item">
+            <div class="module-header" onclick="toggle(this)">
+                <div class="module-num">1</div>
+                <div class="module-header-text">
+                    <h4>Hyrje dhe Konfigurimi i C++</h4>
+                    <p>Kompilatorët, sintaksa, tipet, input/output</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>C++ u krijua nga Bjarne Stroustrup në vitet 1980 si extension i gjuhës C. Sot fuqizon lojërat AAA (Unreal Engine), sistemet operative, softuerët financiarë dhe çdo aplikacion ku performanca është kritike.</p>
+                <p>Ndryshe nga Python ose JavaScript, C++ <strong>kompilohet drejtpërdrejt në instruksione makinerie</strong>. Kjo e bën shumë të shpejtë — por kërkon më shumë kujdes nga programuesi.</p>
+                <p><strong>Setup:</strong> Instalo <strong>MinGW-w64</strong> (Windows) ose GCC (Linux/Mac) dhe <strong>VS Code</strong> me shtesën C/C++.</p>
+                <div class="code-block"><span class="c">// Programi i parë C++</span>
+<span class="tag">#include</span> <span class="str">&lt;iostream&gt;</span>   <span class="c">// libraria kryesore I/O</span>
+<span class="tag">#include</span> <span class="str">&lt;string&gt;</span>
+
+<span class="kw">using namespace</span> std;  <span class="c">// nuk duhet të shkruajmë std:: gjithmonë</span>
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    <span class="c">// Outputi — cout dhe endl</span>
+    cout &lt;&lt; <span class="str">"Pershendetje Bote!"</span> &lt;&lt; endl;
+
+    <span class="c">// Variablat dhe tipet</span>
+    <span class="kw">int</span>    mosha   = <span class="num">20</span>;         <span class="c">// numër i plotë</span>
+    <span class="kw">double</span> nota    = <span class="num">9.5</span>;        <span class="c">// numër dhjetor</span>
+    <span class="kw">bool</span>   aktiv   = <span class="kw">true</span>;      <span class="c">// boolean</span>
+    string emri   = <span class="str">"Arta"</span>;     <span class="c">// tekst</span>
+    <span class="kw">char</span>   shkronja = <span class="str">'A'</span>;      <span class="c">// një karakter</span>
+
+    cout &lt;&lt; <span class="str">"Emri: "</span> &lt;&lt; emri &lt;&lt; <span class="str">", Mosha: "</span> &lt;&lt; mosha &lt;&lt; endl;
+
+    <span class="c">// Input nga përdoruesi</span>
+    string pyetje;
+    cout &lt;&lt; <span class="str">"Si te quajne? "</span>;
+    cin &gt;&gt; pyetje;
+    cout &lt;&lt; <span class="str">"Mire se erdhe, "</span> &lt;&lt; pyetje &lt;&lt; <span class="str">"!"</span> &lt;&lt; endl;
+
+    <span class="kw">return</span> <span class="num">0</span>;  <span class="c">// 0 = programi u mbyll me sukses</span>
+}</div>
+                <div class="tip"><strong>💡 Kompilimi:</strong> Ruaj si <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">program.cpp</code>, pastaj në terminal: <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">g++ program.cpp -o program</code>, pastaj ekzekuto me <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">./program</code>. Çdo herë që ndryshon kodin duhet të rekompilohet!</div>
+            </div></div>
+        </div>
+
+        <!-- MODULE 2 -->
+        <div class="module-item">
+            <div class="module-header" onclick="toggle(this)">
+                <div class="module-num">2</div>
+                <div class="module-header-text">
+                    <h4>Kontrolli i Rrjedhës dhe Funksionet</h4>
+                    <p>if/else, ciklet, funksionet, recursioni</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 2.5 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>Kontrolli i rrjedhës në C++ është shumë i ngjashëm me gjuhë të tjera. Kujdes: C++ kërkon <strong>kllapkave {} për blloqet</strong> dhe <strong>; pas çdo deklarate</strong>.</p>
+                <div class="code-block"><span class="c">// if / else if / else</span>
+<span class="kw">int</span> nota = <span class="num">85</span>;
+<span class="kw">if</span> (nota >= <span class="num">90</span>) {
+    cout &lt;&lt; <span class="str">"Shkelqyeshem!"</span> &lt;&lt; endl;
+} <span class="kw">else if</span> (nota >= <span class="num">60</span>) {
+    cout &lt;&lt; <span class="str">"Kaloi!"</span> &lt;&lt; endl;
+} <span class="kw">else</span> {
+    cout &lt;&lt; <span class="str">"Nuk kaloi."</span> &lt;&lt; endl;
+}
+
+<span class="c">// for loop</span>
+<span class="kw">for</span> (<span class="kw">int</span> i = <span class="num">0</span>; i &lt; <span class="num">5</span>; i++) {
+    cout &lt;&lt; <span class="str">"Hapi: "</span> &lt;&lt; i &lt;&lt; endl;
+}
+
+<span class="c">// while loop</span>
+<span class="kw">int</span> numri = <span class="num">1</span>;
+<span class="kw">while</span> (numri &lt;= <span class="num">5</span>) {
+    cout &lt;&lt; numri * numri &lt;&lt; <span class="str">" "</span>;
+    numri++;
+}
+<span class="c">// 1 4 9 16 25</span>
+
+<span class="c">// Funksion — duhet deklaruar PARA main()</span>
+<span class="kw">int</span> <span class="fn">shto</span>(<span class="kw">int</span> a, <span class="kw">int</span> b) {
+    <span class="kw">return</span> a + b;
+}
+
+<span class="c">// Funksion rekursiv — faktorial</span>
+<span class="kw">int</span> <span class="fn">faktorial</span>(<span class="kw">int</span> n) {
+    <span class="kw">if</span> (n &lt;= <span class="num">1</span>) <span class="kw">return</span> <span class="num">1</span>;     <span class="c">// rast bazë</span>
+    <span class="kw">return</span> n * <span class="fn">faktorial</span>(n - <span class="num">1</span>); <span class="c">// thirrje rekursive</span>
+}
+
+<span class="c">// Overloading — funksione me emër të njëjtë, parametra të ndryshëm</span>
+<span class="kw">double</span> <span class="fn">shto</span>(<span class="kw">double</span> a, <span class="kw">double</span> b) { <span class="kw">return</span> a + b; }
+<span class="c">// C++ zgjedh vetë cila të thirret bazuar te tipi!</span></div>
+                <div class="tip"><strong>💡 Deklarimi përpara:</strong> Nëse funksioni të tytësohet pas <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">main()</code>, duhet të vendosësh <em>prototip</em> para saj: <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">int shto(int a, int b);</code> — vetëm nënshkrimi, pa trupin.</div>
+            </div></div>
+        </div>
+
+        <!-- MODULE 3 -->
+        <div class="module-item">
+            <div class="module-header" onclick="toggle(this)">
+                <div class="module-num">3</div>
+                <div class="module-header-text">
+                    <h4>Pointer-at dhe Menaxhimi i Memories</h4>
+                    <p>Stack vs Heap, pointerët, referencat, new/delete</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 3 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>Pointer-at janë <strong>koncepti #1 i vështirë në C++</strong> — por edhe #1 i fuqishëm. Një pointer është thjesht një variabël që ruan <strong>adresën e memories</strong> të variablit tjetër. Kuptoje dhe do kuptosh si funksionon kompjuteri.</p>
+                <div class="code-block"><span class="c">// & = adresa e, * = vlera te adresa</span>
+<span class="kw">int</span> x = <span class="num">42</span>;
+<span class="kw">int</span>* ptr = &amp;x;         <span class="c">// ptr mban adresën e x</span>
+
+cout &lt;&lt; x &lt;&lt; endl;    <span class="c">// 42    — vlera e x</span>
+cout &lt;&lt; &amp;x &lt;&lt; endl;   <span class="c">// 0x... — adresa e x</span>
+cout &lt;&lt; ptr &lt;&lt; endl;  <span class="c">// 0x... — e njëjta adresë</span>
+cout &lt;&lt; *ptr &lt;&lt; endl; <span class="c">// 42    — vlera TE adresa (dereferencing)</span>
+
+*ptr = <span class="num">100</span>;            <span class="c">// ndrysho x nëpërmjet pointer-it</span>
+cout &lt;&lt; x &lt;&lt; endl;    <span class="c">// 100!</span>
+
+<span class="c">// Referencat — alias i variablit (C++ vetëm)</span>
+<span class="kw">int</span>&amp; ref = x;  <span class="c">// ref IS x — jo kopje</span>
+ref = <span class="num">200</span>;     <span class="c">// x bëhet 200</span>
+
+<span class="c">// Alokimi dinamik — HEAP (ti kontrollon jetëgjatësinë)</span>
+<span class="kw">int</span>* ptr2 = <span class="kw">new</span> <span class="kw">int</span>(<span class="num">55</span>);  <span class="c">// alokon memorie në heap</span>
+cout &lt;&lt; *ptr2 &lt;&lt; endl;      <span class="c">// 55</span>
+<span class="kw">delete</span> ptr2;                 <span class="c">// DUHET fshirë! Memory leak nëse jo</span>
+ptr2 = <span class="kw">nullptr</span>;             <span class="c">// shëno si null pas delete-s</span>
+
+<span class="c">// Array me pointer</span>
+<span class="kw">int</span>* arr = <span class="kw">new</span> <span class="kw">int</span>[<span class="num">5</span>];    <span class="c">// array prej 5 int-ësh</span>
+arr[<span class="num">0</span>] = <span class="num">10</span>; arr[<span class="num">1</span>] = <span class="num">20</span>;
+<span class="kw">delete</span>[] arr;               <span class="c">// delete[] për array!</span></div>
+                <div class="tip"><strong>💡 Memory Leak:</strong> Nëse alokon me <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">new</code> dhe harron <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">delete</code>, memoria mbetet e zënë edhe pas mbylljes së bllokut. Programi rritet derisa ngrin. Në C++ modern prefero <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">unique_ptr</code> dhe <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">shared_ptr</code> — menaxhojnë delete automatikisht!</div>
+            </div></div>
+        </div>
+
+        <!-- MODULE 4 -->
+        <div class="module-item">
+            <div class="module-header" onclick="toggle(this)">
+                <div class="module-num">4</div>
+                <div class="module-header-text">
+                    <h4>OOP me C++ — Klasat dhe Trashëgimia</h4>
+                    <p>Classes, constructors, inheritance, polymorphism</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 3.5 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>C++ është gjuha OOP par excellence. Klasat bashkojnë të dhëna (atribute) dhe funksione (metoda) në një strukturë. <strong>public/private/protected</strong> kontrollojnë se kush mund të aksesojë çfarë.</p>
+                <div class="code-block"><span class="kw">class</span> <span class="fn">Karroca</span> {
+<span class="kw">private</span>:               <span class="c">// aksesueshem vetem brenda klasës</span>
+    string marka;
+    <span class="kw">int</span>    shpejtesia;
+    <span class="kw">double</span> karburant;
+
+<span class="kw">public</span>:                <span class="c">// aksesueshem nga jashtë</span>
+    <span class="c">// Constructor</span>
+    <span class="fn">Karroca</span>(string m, <span class="kw">double</span> k) {
+        marka = m;
+        karburant = k;
+        shpejtesia = <span class="num">0</span>;
+    }
+
+    <span class="c">// Destructor — thirret kur objekti shkatërrohet</span>
+    ~<span class="fn">Karroca</span>() {
+        cout &lt;&lt; marka &lt;&lt; <span class="str">" u fshi."</span> &lt;&lt; endl;
+    }
+
+    <span class="kw">void</span> <span class="fn">shpejto</span>(<span class="kw">int</span> vlera) {
+        <span class="kw">if</span> (karburant &gt; <span class="num">0</span>) shpejtesia += vlera;
+    }
+
+    <span class="kw">void</span> <span class="fn">info</span>() {
+        cout &lt;&lt; marka &lt;&lt; <span class="str">": "</span> &lt;&lt; shpejtesia &lt;&lt; <span class="str">" km/h"</span> &lt;&lt; endl;
+    }
+};
+
+<span class="c">// Trashëgimia</span>
+<span class="kw">class</span> <span class="fn">MakineElektrike</span> : <span class="kw">public</span> <span class="fn">Karroca</span> {
+<span class="kw">private</span>:
+    <span class="kw">int</span> bateria;  <span class="c">// % e baterisë</span>
+
+<span class="kw">public</span>:
+    <span class="fn">MakineElektrike</span>(string m, <span class="kw">int</span> b) : <span class="fn">Karroca</span>(m, <span class="num">0</span>) {
+        bateria = b;
+    }
+
+    <span class="kw">void</span> <span class="fn">karikо</span>() { bateria = <span class="num">100</span>; }
+};
+
+<span class="c">// Polymorphism me virtual</span>
+<span class="kw">class</span> <span class="fn">Forma</span> {
+<span class="kw">public</span>:
+    <span class="kw">virtual</span> <span class="kw">double</span> <span class="fn">zona</span>() = <span class="num">0</span>;  <span class="c">// pure virtual — duhet override</span>
+};
+
+<span class="kw">class</span> <span class="fn">Rreth</span> : <span class="kw">public</span> <span class="fn">Forma</span> {
+    <span class="kw">double</span> r;
+<span class="kw">public</span>:
+    <span class="fn">Rreth</span>(<span class="kw">double</span> radius) : r(radius) {}
+    <span class="kw">double</span> <span class="fn">zona</span>() <span class="kw">override</span> { <span class="kw">return</span> <span class="num">3.14159</span> * r * r; }
+};</div>
+                <div class="tip"><strong>💡 virtual dhe override:</strong> Pa <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">virtual</code>, trashëgimia statike — C++ zgjedh funksionin bazuar te tipi i pointer-it, jo objektit. Me <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">virtual</code>, zgjedhja bëhet në runtime (dynamic dispatch) — kjo është polimorfizmi i vërtetë!</div>
+            </div></div>
+        </div>
+
+        <!-- MODULE 5 -->
+        <div class="module-item">
+            <div class="module-header" onclick="toggle(this)">
+                <div class="module-num">5</div>
+                <div class="module-header-text">
+                    <h4>STL — Standard Template Library</h4>
+                    <p>vector, map, set, iteratorët dhe algoritmet</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 3 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>STL është koleksioni i strukturave të të dhënave dhe algoritmeve të ndërtuara brenda C++. Kurrë mos ndërtosh vector-in ose sort-in nga zero — STL i ka të gjitha!</p>
+                <div class="code-block"><span class="tag">#include</span> <span class="str">&lt;vector&gt;</span>
+<span class="tag">#include</span> <span class="str">&lt;map&gt;</span>
+<span class="tag">#include</span> <span class="str">&lt;algorithm&gt;</span>
+<span class="tag">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="kw">using namespace</span> std;
+
+<span class="c">// vector — array dinamike</span>
+vector&lt;<span class="kw">int</span>&gt; numrat = {<span class="num">5</span>, <span class="num">2</span>, <span class="num">8</span>, <span class="num">1</span>, <span class="num">9</span>};
+numrat.<span class="fn">push_back</span>(<span class="num">3</span>);     <span class="c">// shto në fund</span>
+numrat.<span class="fn">pop_back</span>();       <span class="c">// fshi fundin</span>
+cout &lt;&lt; numrat.<span class="fn">size</span>();   <span class="c">// 5</span>
+
+<span class="c">// Iterim me range-based for (C++11)</span>
+<span class="kw">for</span> (<span class="kw">int</span> n : numrat) cout &lt;&lt; n &lt;&lt; <span class="str">" "</span>;
+
+<span class="c">// Algoritmet</span>
+<span class="fn">sort</span>(numrat.<span class="fn">begin</span>(), numrat.<span class="fn">end</span>());   <span class="c">// rendit rritës</span>
+<span class="fn">reverse</span>(numrat.<span class="fn">begin</span>(), numrat.<span class="fn">end</span>());
+<span class="kw">auto</span> max_el = *<span class="fn">max_element</span>(numrat.<span class="fn">begin</span>(), numrat.<span class="fn">end</span>());
+
+<span class="c">// map — çelës:vlerë (i renditur)</span>
+map&lt;string, <span class="kw">int</span>&gt; notat;
+notat[<span class="str">"Arta"</span>] = <span class="num">95</span>;
+notat[<span class="str">"Blerim"</span>] = <span class="num">78</span>;
+notat[<span class="str">"Çlirim"</span>] = <span class="num">88</span>;
+
+<span class="kw">for</span> (<span class="kw">auto</span>&amp; [emri, nota] : notat) {    <span class="c">// structured binding C++17</span>
+    cout &lt;&lt; emri &lt;&lt; <span class="str">": "</span> &lt;&lt; nota &lt;&lt; endl;
+}
+
+<span class="c">// unordered_map — çelës:vlerë (pa rend, por SHUMË i shpejtë)</span>
+<span class="tag">#include</span> <span class="str">&lt;unordered_map&gt;</span>
+unordered_map&lt;string, <span class="kw">int</span>&gt; freq;
+<span class="kw">for</span> (<span class="kw">char</span> c : <span class="str">"programim"</span>) freq[c]++;</div>
+                <div class="tip"><strong>💡 vector vs array:</strong> Gjithmonë prefero <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">vector</code> mbi array-t e zakonshme. Vector rritet dinamikisht, di madhësinë e vet, dhe punon me algoritmet e STL. Array-t janë të dobishëm vetëm kur madhësia dihet compile-time dhe performanca është kritike.</div>
+            </div></div>
+        </div>
+
+        <!-- MODULE 6 -->
+        <div class="module-item">
+            <div class="module-header" onclick="toggle(this)">
+                <div class="module-num">6</div>
+                <div class="module-header-text">
+                    <h4>C++ Modern — C++17 dhe C++20</h4>
+                    <p>Smart pointers, lambda, auto, ranges</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 3 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>C++ modern (C++11 dhe pas) ka ndryshuar rrënjësisht si shkruhet C++. Kodi i ri duhet të përdorë këto veçori — janë shumë më të sigurta dhe elegante.</p>
+                <div class="code-block"><span class="tag">#include</span> <span class="str">&lt;memory&gt;</span>   <span class="c">// për smart pointers</span>
+
+<span class="c">// Smart Pointers — auto-delete, pa memory leak!</span>
+<span class="kw">auto</span> ptr = make_unique&lt;<span class="kw">int</span>&gt;(<span class="num">42</span>);  <span class="c">// delete automatik</span>
+cout &lt;&lt; *ptr &lt;&lt; endl;               <span class="c">// 42</span>
+<span class="c">// ptr fshihet automatikisht kur del nga scope — pa new/delete!</span>
+
+<span class="kw">auto</span> ptr2 = make_shared&lt;string&gt;(<span class="str">"Shperndarje"</span>);
+<span class="c">// shared_ptr: shumë pronarë, fshihet kur të gjithë largohen</span>
+
+<span class="c">// Lambda — funksione anonime</span>
+<span class="kw">auto</span> dyfish = [](<span class="kw">int</span> x) { <span class="kw">return</span> x * <span class="num">2</span>; };
+cout &lt;&lt; <span class="fn">dyfish</span>(<span class="num">7</span>) &lt;&lt; endl;  <span class="c">// 14</span>
+
+<span class="c">// Lambda me capture — kap variabla nga scope-i jashtë</span>
+<span class="kw">int</span> baza = <span class="num">10</span>;
+<span class="kw">auto</span> shto_bazen = [baza](<span class="kw">int</span> x) { <span class="kw">return</span> x + baza; };
+cout &lt;&lt; <span class="fn">shto_bazen</span>(<span class="num">5</span>) &lt;&lt; endl;  <span class="c">// 15</span>
+
+<span class="c">// Lambda me sort</span>
+vector&lt;string&gt; emrat = {<span class="str">"Çlirim"</span>, <span class="str">"Arta"</span>, <span class="str">"Blerim"</span>};
+<span class="fn">sort</span>(emrat.<span class="fn">begin</span>(), emrat.<span class="fn">end</span>(),
+    [](const string&amp; a, const string&amp; b) { <span class="kw">return</span> a &lt; b; });
+
+<span class="c">// auto — deduksion automatik i tipit</span>
+<span class="kw">auto</span> x = <span class="num">42</span>;        <span class="c">// int</span>
+<span class="kw">auto</span> y = <span class="num">3.14</span>;      <span class="c">// double</span>
+<span class="kw">auto</span> z = <span class="str">"tekst"</span>;   <span class="c">// const char*</span>
+
+<span class="c">// Optional — vlera mund të mos ekzistojë (C++17)</span>
+<span class="tag">#include</span> <span class="str">&lt;optional&gt;</span>
+optional&lt;<span class="kw">int</span>&gt; <span class="fn">gjej</span>(<span class="kw">int</span> x) {
+    <span class="kw">if</span> (x > <span class="num">0</span>) <span class="kw">return</span> x * <span class="num">2</span>;
+    <span class="kw">return</span> nullopt;   <span class="c">// nuk ka vlerë</span>
+}</div>
+                <div class="tip"><strong>💡 Rregulli i C++ Modern:</strong> Nëse shkruan <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">new</code>/<code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">delete</code> drejtpërdrejt — ke problem. Prefero <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">make_unique</code> dhe <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">make_shared</code>. Kompilo gjithmonë me <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">-std=c++17</code> ose <code style="background:#fff3cd;color:#856404;padding:1px 5px;border-radius:3px;">-std=c++20</code>.</div>
+            </div></div>
+        </div>
+
+        <!-- MODULE 7 -->
+        <div class="module-item">
+            <div class="module-header" onclick="toggle(this)">
+                <div class="module-num">7</div>
+                <div class="module-header-text">
+                    <h4>🎯 Projekti Final — Lojë ose Mjet</h4>
+                    <p>Apliko gjithçka dhe shipa një aplikacion real C++</p>
+                </div>
+                <div class="module-duration"><i class="fa-regular fa-clock"></i> 7 orë</div>
+                <div class="module-toggle"><i class="fa-solid fa-chevron-down"></i></div>
+            </div>
+            <div class="module-body"><div class="module-content">
+                <p>Zgjidh NJË projekt. Të gjithë janë real dhe mund të vendosen në GitHub si portofol!</p>
+                <p><strong>🎮 Lojë "Guessing Game":</strong> Kompjuteri zgjedh numër 1-1000, lojëtari gjen me hints. Ruan rezultatin më të mirë, ka sistema vështirësie.</p>
+                <p><strong>📚 Sistem Notash:</strong> Menaxhon studentët dhe notat. Shton/fshin/liston. Ruan në skedar. Llogarit mesatare dhe renditje.</p>
+                <p><strong>🧮 Kalkulator Matricash:</strong> Lexon matrica nga input, bën mbledhje, shumëzim, transpose. Tregon rezultatin në format tabelë.</p>
+                <div class="code-block"><span class="c">// Skelet i Sistemit të Notave</span>
+<span class="tag">#include</span> <span class="str">&lt;iostream&gt;</span>
+<span class="tag">#include</span> <span class="str">&lt;vector&gt;</span>
+<span class="tag">#include</span> <span class="str">&lt;algorithm&gt;</span>
+<span class="tag">#include</span> <span class="str">&lt;fstream&gt;</span>
+<span class="kw">using namespace</span> std;
+
+<span class="kw">struct</span> Studenti {
+    string emri;
+    vector&lt;<span class="kw">double</span>&gt; notat;
+
+    <span class="kw">double</span> <span class="fn">mesatare</span>() {
+        <span class="kw">double</span> shuma = <span class="num">0</span>;
+        <span class="kw">for</span> (<span class="kw">double</span> n : notat) shuma += n;
+        <span class="kw">return</span> shuma / notat.<span class="fn">size</span>();
+    }
+};
+
+<span class="kw">int</span> <span class="fn">main</span>() {
+    vector&lt;Studenti&gt; klasa;
+
+    <span class="c">// Shto studentë</span>
+    klasa.<span class="fn">push_back</span>({<span class="str">"Arta"</span>, {<span class="num">9.5</span>, <span class="num">8.0</span>, <span class="num">9.0</span>}});
+    klasa.<span class="fn">push_back</span>({<span class="str">"Blerim"</span>, {<span class="num">7.0</span>, <span class="num">6.5</span>, <span class="num">7.5</span>}});
+
+    <span class="c">// Rendit sipas mesatares (zbritës)</span>
+    <span class="fn">sort</span>(klasa.<span class="fn">begin</span>(), klasa.<span class="fn">end</span>(),
+        [](<span class="kw">auto</span>&amp; a, <span class="kw">auto</span>&amp; b) { <span class="kw">return</span> a.<span class="fn">mesatare</span>() > b.<span class="fn">mesatare</span>(); });
+
+    <span class="kw">for</span> (<span class="kw">auto</span>&amp; s : klasa)
+        cout &lt;&lt; s.emri &lt;&lt; <span class="str">": "</span> &lt;&lt; s.<span class="fn">mesatare</span>() &lt;&lt; endl;
+}</div>
+                <div class="tip"><strong>🎉 Pas C++?</strong> Nëse të intereson zhvillimi i lojërave: mëso <strong>Unreal Engine</strong> (C++). Nëse dëshiron programim kompetitiv: zotëro STL dhe algoritmet. Nëse dëshiron sisteme: shiko <strong>POSIX</strong> dhe <strong>Linux Kernel</strong> programimin!</div>
+            </div></div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h3>KODAL</h3>
+            <p>Platformë mësimi programimi e bërë për studentë shqiptarë.</p>
+            <div class="footer-social-icons">
+                <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-links"><h4>Kurset</h4><ul>
+            <li><a href="html-course.html">HTML</a></li>
+            <li><a href="css-course.html">CSS</a></li>
+            <li><a href="python-course.html">Python</a></li>
+            <li><a href="javascript-course.html">JavaScript</a></li>
+            <li><a href="cpp-course.html">C++</a></li>
+        </ul></div>
+        <div class="footer-links"><h4>Kompania</h4><ul>
+            <li><a href="index.html">Kryefaqja</a></li>
+            <li><a href="contact.html">Rreth Nesh</a></li>
+            <li><a href="contact.html">Kontaktet</a></li>
+        </ul></div>
+        <div class="footer-contact-block"><h4>Kontaktet</h4>
+            <p><i class="fa-solid fa-envelope"></i> info@kod.al</p>
+            <p><i class="fa-solid fa-phone"></i> +355 6x xx xx xxx</p>
+            <p><i class="fa-solid fa-location-dot"></i> Tiranë, Shqipëri</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 KodAl. Të gjitha të drejtat e rezervuara.</p>
+        <div class="footer-bottom-links"><a href="#">Privatësia</a><a href="#">Kushtet</a></div>
+    </div>
+</footer>
+
+<script>
+function toggle(header) {
+    const item = header.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.module-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+}
+</script>
+
+    <script src="auth.js"></script>
+    <script src="course.js"></script>
+
+</body>
+</html>
